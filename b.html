@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Congelito · dindin de açaí (versão B)</title>
+<meta name="description" content="Dindin de açaí com banana, sem lactose, sem corante e sem aromatizante. Nas lojas Fonte de Vida do DF e Entorno, e no freezer da sua festa.">
+<meta property="og:title" content="Congelito · dindin de açaí">
+<meta property="og:description" content="Nas lojas Fonte de Vida e no freezer da sua festa.">
+<meta property="og:image" content="assets/congelito-acai.webp">
+<link rel="icon" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Modak&family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --acai:#4c2986; --rosa:#e31a97; --limao:#a9d920; --turquesa:#3fb8c3;
+  --gelo:#f1fbfc; --tinta:#2b1650; --branco:#ffffff;
+  --raio:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:"Comfortaa",system-ui,sans-serif;color:var(--tinta);background:var(--gelo);line-height:1.6;font-size:17px}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rosa);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.display{font-family:"Modak",system-ui,sans-serif;font-weight:400;line-height:.86;letter-spacing:.5px}
+.btn{display:inline-flex;align-items:center;gap:.55em;font:700 1rem/1 "Comfortaa",sans-serif;text-decoration:none;
+  padding:1em 1.4em;border-radius:999px;border:0;cursor:pointer;transition:transform .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-rosa{background:var(--rosa);color:var(--branco);box-shadow:0 6px 0 #a50f6c}
+.btn-claro{background:var(--branco);color:var(--acai);box-shadow:0 6px 0 rgba(43,22,80,.25)}
+.btn-acai{background:var(--acai);color:var(--branco);box-shadow:0 6px 0 #2e1757}
+.btn-zap{background:#1fae5b;color:#fff;box-shadow:0 6px 0 #127a3e}
+.btn svg{width:1.2em;height:1.2em}
+
+/* topo */
+header{background:var(--turquesa)}
+.topo{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.topo img{height:46px;width:auto}
+.topo nav{display:flex;gap:18px;font-weight:700;font-size:.95rem}
+.topo nav a{text-decoration:none;color:var(--branco)}
+@media (max-width:640px){.topo nav{display:none}.topo img{height:38px}}
+
+/* hero */
+.hero{background:var(--turquesa);color:var(--branco);position:relative;overflow:hidden;padding:0}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:24px;padding:24px 0 56px}
+.selo{display:inline-block;background:var(--limao);color:var(--acai);font-weight:700;font-size:.9rem;
+  padding:.45em 1em;border-radius:999px;transform:rotate(-2deg);margin-bottom:18px}
+.hero h1{font-size:clamp(3.4rem,9vw,6.6rem);color:var(--branco);text-shadow:0 5px 0 var(--acai)}
+.hero p.lead{font-size:1.15rem;max-width:34ch;margin:18px 0 26px;font-weight:600}
+.hero .acoes{display:flex;flex-wrap:wrap;gap:14px}
+.hero figure{position:relative}
+.hero figure img{width:100%;max-height:520px;object-fit:contain;filter:drop-shadow(0 18px 0 rgba(76,41,134,.25))}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr;padding:8px 0 40px;gap:8px}.hero figure{max-width:200px;margin:0 auto;order:-1}}
+
+.foto-hero img{border-radius:32px;border:5px solid var(--branco);aspect-ratio:4/5;object-fit:cover;object-position:50% 70%;
+  box-shadow:12px 12px 0 var(--acai);transform:rotate(2deg);filter:none!important}
+@media (max-width:820px){.hero .foto-hero{max-width:280px}.foto-hero img{transform:rotate(1.5deg)}}
+/* mosaico: o elemento-assinatura da marca */
+.mosaico{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));grid-auto-rows:54px;height:54px;overflow:hidden}
+.mosaico span{display:grid;place-items:center;font-family:"Modak",sans-serif;font-size:2.1rem;line-height:1}
+.c1{background:var(--acai);color:var(--limao)}.c2{background:var(--rosa);color:var(--branco)}
+.c3{background:var(--limao);color:var(--acai)}.c4{background:var(--turquesa);color:var(--branco)}
+.c5{background:var(--branco);color:var(--rosa)}
+.mosaico svg{width:30px;height:30px}
+
+section{padding:clamp(56px,9vw,84px) 0}
+h2{font-size:clamp(2.6rem,6vw,4.2rem);color:var(--acai)}
+.sub{max-width:52ch;margin-top:14px;font-size:1.08rem}
+
+/* onde comprar */
+.onde-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.cartao{background:var(--branco);border-radius:var(--raio);padding:clamp(20px,5vw,30px);border:3px solid var(--acai);box-shadow:8px 8px 0 var(--acai)}
+.cartao h3{font-size:1.25rem;margin-bottom:8px;color:var(--acai)}
+.cartao .grande{font-family:"Modak",sans-serif;font-size:4.4rem;line-height:.9;color:var(--rosa)}
+.cartao p{margin-bottom:18px}
+.lojas{list-style:none;display:grid;gap:4px;margin:10px 0 14px}
+.lojas a{display:grid;gap:2px;text-decoration:none;padding:10px 12px;border-radius:14px}
+.lojas a:hover{background:var(--gelo)}
+.lojas strong{color:var(--rosa)}
+.lojas span{font-size:.92rem}
+.nota-escura{font-size:.88rem;opacity:.8}
+.regiao{font-weight:700;color:var(--acai);margin:18px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips a{text-decoration:none;font-weight:700;font-size:.9rem;padding:.45em .9em;border-radius:999px;background:var(--gelo);border:2px solid var(--turquesa);color:var(--acai)}
+.chips a:hover{background:var(--turquesa);color:#fff}
+@media (max-width:760px){.onde-grid{grid-template-columns:1fr}}
+
+/* festa */
+.festa{background:var(--acai);color:var(--branco);position:relative}
+.festa h2{color:var(--limao)}
+.festa-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:start;margin-top:44px}
+.faixas{display:grid;gap:14px}
+.faixa{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:baseline;background:rgba(255,255,255,.08);
+  border-radius:22px;padding:18px 22px;border:2px solid transparent;transition:border-color .2s,background .2s}
+.faixa .preco{font-family:"Modak",sans-serif;font-size:2.6rem;line-height:1;color:var(--branco);grid-row:span 2}
+.faixa strong{font-size:1.05rem}
+.faixa small{opacity:.85}
+.faixa.ativa{border-color:var(--limao);background:rgba(169,217,32,.16)}
+.nota{font-size:.9rem;opacity:.85;margin-top:14px}
+.equip{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.equip figure{background:rgba(255,255,255,.08);border-radius:22px;overflow:hidden}
+.equip img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.equip figcaption{padding:12px 14px 16px;font-size:.9rem}
+.equip figcaption strong{display:block;font-size:1.05rem;color:var(--limao)}
+@media (max-width:520px){.equip{grid-template-columns:1fr}}
+
+
+.calc{background:var(--branco);color:var(--tinta);border-radius:var(--raio);padding:clamp(20px,5vw,30px);box-shadow:10px 10px 0 var(--rosa)}
+.calc h3{font-size:1.4rem;color:var(--acai);margin-bottom:6px}
+.calc label{display:block;font-weight:700;font-size:.95rem;margin:16px 0 6px}
+.calc input,.calc select{width:100%;font:600 1rem "Comfortaa",sans-serif;padding:.85em 1em;border-radius:14px;
+  border:2px solid #cfc4e3;background:var(--gelo);color:var(--tinta)}
+.calc input:focus,.calc select:focus{border-color:var(--acai);outline:none}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.resultado{margin:22px 0 18px;padding:18px;border-radius:18px;background:var(--gelo);border:2px dashed var(--turquesa)}
+.resultado .n{font-family:"Modak",sans-serif;font-size:3rem;line-height:1;color:var(--rosa)}
+.resultado p{font-size:.95rem}
+.calc .btn{width:100%;justify-content:center}
+@media (max-width:860px){.festa-grid{grid-template-columns:1fr}.duas{grid-template-columns:1fr}}
+
+/* por que */
+.porque-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.selos{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}
+.selos span{font-weight:700;background:var(--limao);color:var(--acai);padding:.55em 1.1em;border-radius:999px}
+.selos span:nth-child(2){background:var(--rosa);color:#fff}
+.selos span:nth-child(3){background:var(--turquesa);color:#fff}
+.porque img{border-radius:var(--raio);border:3px solid var(--acai)}
+.foto-insta{display:grid;gap:22px;justify-items:start}
+@media (max-width:820px){.porque-grid{grid-template-columns:1fr}}
+
+footer{background:var(--rosa);color:var(--branco);padding:56px 0 40px}
+.rodape{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:flex-end}
+.rodape img{height:52px;width:auto;margin-bottom:12px}
+.rodape a{font-weight:700}
+.legal{font-size:.82rem;opacity:.9;margin-top:28px}
+
+.zap-fixo{position:fixed;right:16px;bottom:16px;z-index:9;width:60px;height:60px;border-radius:50%;background:#1fae5b;
+  display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.zap-fixo svg{width:32px;height:32px;fill:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap topo">
+    <a href="#" aria-label="Congelito, início"><img src="assets/logo-branco.svg" alt="Congelito"></a>
+    <nav aria-label="Seções">
+      <a href="#onde">Onde comprar</a>
+      <a href="#festa">Pra sua festa</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="t-hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="selo">Mês das Crianças na Fonte de Vida</span>
+      <h1 id="t-hero" class="display">Dindin de açaí, geladinho e do bem</h1>
+      <p class="lead">Açaí com banana, sem lactose, sem corante e sem aromatizante. Agora nas lojas Fonte de Vida do DF e Entorno.</p>
+      <div class="acoes">
+        <a class="btn btn-claro" href="#onde">Onde comprar</a>
+        <a class="btn btn-rosa" href="#festa">Levar pra minha festa</a>
+      </div>
+    </div>
+    <figure class="foto-hero"><img src="assets/gelito-festa.webp" alt="O Gelito, mascote azul do Congelito, num parque de Brasília com um isopor do Congelito" width="768" height="1344"></figure>
+  </div>
+</section>
+
+<div class="mosaico" aria-hidden="true" id="mosaico"></div>
+
+<section id="onde" aria-labelledby="t-onde">
+  <div class="wrap">
+    <h2 id="t-onde" class="display">Onde tem Congelito</h2>
+    <p class="sub">Procure o freezer azul da Congelito nas lojas Fonte de Vida. Se não der pra ir até lá, a Fonte de Vida entrega, e acima de R$ 80 a entrega é grátis.</p>
+    <div class="onde-grid">
+      <div class="cartao">
+        <h3>Lojas Fonte de Vida</h3>
+        <ul class="lojas">
+          <li><a href="https://fontedevidaonline.com.br/aguas-claras/" target="_blank" rel="noopener"><strong>Águas Claras</strong><span>Av. Pau Brasil/Araucárias, Rua 22, perto do Águas Claras Shopping</span></a></li>
+          <li><a href="https://fontedevidaonline.com.br/guara/" target="_blank" rel="noopener"><strong>Guará I e II</strong><span>Polo de Modas, QE 40, Rua 5, Lote 3</span></a></li>
+          <li><a href="https://fontedevidaonline.com.br/paranoa/" target="_blank" rel="noopener"><strong>Paranoá</strong><span>Av. Paranoá, Quadra 32, atrás da Panificadora Vitória</span></a></li>
+          <li><a href="https://fontedevidaonline.com.br/planaltina/" target="_blank" rel="noopener"><strong>Planaltina (DF)</strong><span>Buritis, Quadra 2, ao lado da Mil Delícias</span></a></li>
+          <li><a href="https://fontedevidaonline.com.br/sobradinho/" target="_blank" rel="noopener"><strong>Sobradinho</strong><span>Quadra 10/11, CL 11, Loja 1</span></a></li>
+          <li><a href="https://fontedevidaonline.com.br/taguatinga/" target="_blank" rel="noopener"><strong>Taguatinga</strong><span>CSB Quadra 7, em frente ao Bradesco</span></a></li>
+          <li><a href="https://fontedevidaonline.com.br/vicente-pires/" target="_blank" rel="noopener"><strong>Vicente Pires</strong><span>Rua 5, perto da academia Corpo e Saúde</span></a></li>
+          <li><a href="https://fontedevidaonline.com.br/formosa-go/" target="_blank" rel="noopener"><strong>Formosa (GO)</strong><span>Bairro Formosinha, Av. 6, nº 911, perto da Hidrofer</span></a></li>
+          <li><a href="https://fontedevidaonline.com.br/planaltina-go/" target="_blank" rel="noopener"><strong>Planaltina (GO)</strong><span>Quadra 1 MC, Lote 6, Loja 2, Setor Sul, ao lado do Retalhão Elias</span></a></li>
+        </ul>
+        <p class="nota-escura">Endereços do site da Fonte de Vida. O mapa com todos os pontos que têm freezer do Congelito vem em breve.</p>
+      </div>
+      <div class="cartao">
+        <span class="grande">R$ 80</span>
+        <h3>Entrega grátis no delivery da Fonte de Vida</h3>
+        <p>Escolha a sua região, faça o pedido e inclua o Congelito na lista. O pacote vem com 10 dindins.</p>
+        <p class="regiao">Distrito Federal</p>
+        <div class="chips">
+            <a href="https://fontedevidaonline.com.br/aguas-claras/" target="_blank" rel="noopener">Águas Claras</a>
+            <a href="https://fontedevidaonline.com.br/asa-norte-2/" target="_blank" rel="noopener">Asa Norte</a>
+            <a href="https://fontedevidaonline.com.br/asa-sul/" target="_blank" rel="noopener">Asa Sul</a>
+            <a href="https://fontedevidaonline.com.br/brazlandia/" target="_blank" rel="noopener">Brazlândia</a>
+            <a href="https://fontedevidaonline.com.br/candangolandia/" target="_blank" rel="noopener">Candangolândia</a>
+            <a href="https://fontedevidaonline.com.br/ceilandia/" target="_blank" rel="noopener">Ceilândia</a>
+            <a href="https://fontedevidaonline.com.br/gama/" target="_blank" rel="noopener">Gama</a>
+            <a href="https://fontedevidaonline.com.br/guara/" target="_blank" rel="noopener">Guará</a>
+            <a href="https://fontedevidaonline.com.br/itapoa/" target="_blank" rel="noopener">Itapoã</a>
+            <a href="https://fontedevidaonline.com.br/jardim-botanico/" target="_blank" rel="noopener">Jardim Botânico</a>
+            <a href="https://fontedevidaonline.com.br/lago-norte-e-sul/" target="_blank" rel="noopener">Lago Norte</a>
+            <a href="https://fontedevidaonline.com.br/lago-sul/" target="_blank" rel="noopener">Lago Sul</a>
+            <a href="https://fontedevidaonline.com.br/nucleo-bandeirante/" target="_blank" rel="noopener">Núcleo Bandeirante</a>
+            <a href="https://fontedevidaonline.com.br/paranoa/" target="_blank" rel="noopener">Paranoá</a>
+            <a href="https://fontedevidaonline.com.br/planaltina/" target="_blank" rel="noopener">Planaltina</a>
+            <a href="https://fontedevidaonline.com.br/recanto-das-emas/" target="_blank" rel="noopener">Recanto das Emas</a>
+            <a href="https://fontedevidaonline.com.br/riacho-fundo/" target="_blank" rel="noopener">Riacho Fundo</a>
+            <a href="https://fontedevidaonline.com.br/riacho-fundo-2/" target="_blank" rel="noopener">Riacho Fundo II</a>
+            <a href="https://fontedevidaonline.com.br/samambaia/" target="_blank" rel="noopener">Samambaia</a>
+            <a href="https://fontedevidaonline.com.br/santa-maria/" target="_blank" rel="noopener">Santa Maria</a>
+            <a href="https://fontedevidaonline.com.br/sao-sebastiao/" target="_blank" rel="noopener">São Sebastião</a>
+            <a href="https://fontedevidaonline.com.br/sobradinho/" target="_blank" rel="noopener">Sobradinho</a>
+            <a href="https://fontedevidaonline.com.br/sudoeste/" target="_blank" rel="noopener">Sudoeste</a>
+            <a href="https://fontedevidaonline.com.br/taguatinga/" target="_blank" rel="noopener">Taguatinga</a>
+            <a href="https://fontedevidaonline.com.br/vicente-pires/" target="_blank" rel="noopener">Vicente Pires</a>
+        </div>
+        <p class="regiao">Goiás</p>
+        <div class="chips">
+            <a href="https://fontedevidaonline.com.br/aguas-lindas-go/" target="_blank" rel="noopener">Águas Lindas</a>
+            <a href="https://fontedevidaonline.com.br/cidade-ocidental-go/" target="_blank" rel="noopener">Cidade Ocidental</a>
+            <a href="https://fontedevidaonline.com.br/formosa-go/" target="_blank" rel="noopener">Formosa</a>
+            <a href="https://fontedevidaonline.com.br/luziania-go/" target="_blank" rel="noopener">Luziânia</a>
+            <a href="https://fontedevidaonline.com.br/planaltina-go/" target="_blank" rel="noopener">Planaltina</a>
+            <a href="https://fontedevidaonline.com.br/valparaiso-go/" target="_blank" rel="noopener">Valparaíso</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="festa" class="festa" aria-labelledby="t-festa">
+  <div class="wrap">
+    <h2 id="t-festa" class="display">O freezer vai junto pra sua festa</h2>
+    <p class="sub">Aniversário, festa da escola, confraternização. A gente leva o freezer cheio, você só serve.</p>
+    <div class="festa-grid">
+      <div>
+        <div class="faixas" id="faixas">
+          <div class="faixa" data-min="100"><span class="preco">R$ 350</span><strong>até 100 dindins</strong><small>festas pequenas e aniversários em casa</small></div>
+          <div class="faixa" data-min="200"><span class="preco">R$ 600</span><strong>até 200 dindins</strong><small>festas de escola e de salão</small></div>
+          <div class="faixa" data-min="400"><span class="preco">R$ 1.000</span><strong>até 400 dindins</strong><small>eventos grandes e confraternizações</small></div>
+        </div>
+        <p class="nota">Freezer azul ou Congelity inclusos, pelos mesmos valores. O valor pode mudar conforme a distância do local.</p>
+        <div class="equip">
+          <figure><img src="assets/freezer-azul.webp" alt="Freezer azul do Congelito numa loja" loading="lazy" width="700" height="804"><figcaption><strong>Freezer azul</strong>O clássico, com a arte do Congelito. Vai cheio e volta depois da festa.</figcaption></figure>
+          <figure><img src="assets/congelity.webp" alt="Congelity, o carrinho de dindin de açaí do Congelito" loading="lazy" width="720" height="563"><figcaption><strong>Congelity</strong>Nosso carrinho de dindin de açaí, inspirado no Curiosity, o robô explorador de Marte.</figcaption></figure>
+        </div>
+      </div>
+
+      <form class="calc" id="calc" novalidate>
+        <h3>Quantos dindins a sua festa precisa?</h3>
+        <p>Conte os convidados que a gente sugere a opção e já abre o WhatsApp com tudo preenchido.</p>
+        <label for="convidados">Número de convidados</label>
+        <input id="convidados" name="convidados" type="number" inputmode="numeric" min="1" max="2000" placeholder="Ex.: 50">
+        <div class="duas">
+          <div><label for="data">Data da festa</label><input id="data" name="data" type="date"></div>
+          <div><label for="local">Bairro ou cidade</label><input id="local" name="local" type="text" placeholder="Ex.: Sobradinho"></div>
+        </div>
+        <label for="equip">Equipamento</label>
+        <select id="equip" name="equip">
+          <option>Freezer azul</option>
+          <option>Congelity, o carrinho</option>
+          <option>Ainda não sei</option>
+        </select>
+        <label for="origem">Como você conheceu o Congelito?</label>
+        <select id="origem" name="origem">
+          <option value="">Escolha uma opção</option>
+          <option>QR code no freezer da Fonte de Vida</option>
+          <option>Instagram</option>
+          <option>Indicação de alguém</option>
+          <option>Experimentei numa festa</option>
+          <option>Outro</option>
+        </select>
+        <div class="resultado" aria-live="polite" id="resultado">
+          <p>Informe os convidados para ver a sugestão.</p>
+        </div>
+        <a class="btn btn-zap" id="btn-zap" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.6-4.1c-.4-.6-1-1.6-1-3s.8-2.1 1-2.4a1.1 1.1 0 0 1 .8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6a8.4 8.4 0 0 0 1.6 1.9 7.7 7.7 0 0 0 2.2 1.4c.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3a2.2 2.2 0 0 1-.1 1.2Z"/></svg>
+          Pedir orçamento no WhatsApp
+        </a>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="porque" aria-labelledby="t-sobre">
+  <div class="wrap porque-grid">
+    <div>
+      <h2 id="t-sobre" class="display">Feito em família</h2>
+      <p class="sub">O Congelito é feito pela nossa família. E fazemos pensando na sua: açaí do bem pra criançada e pros marmanjos.</p>
+      <div class="selos"><span>sem lactose</span><span>sem corante</span><span>sem aromatizante</span></div>
+    </div>
+    <div class="foto-insta">
+      <img src="assets/congelito-acai.webp" alt="Pacote de Congelito mergulhando numa tigela de açaí" loading="lazy" width="1100" height="803">
+      <a class="btn btn-acai" href="https://www.instagram.com/congelito.oficial/" target="_blank" rel="noopener">Seguir no Instagram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="mosaico" aria-hidden="true" id="mosaico2"></div>
+<footer>
+  <div class="wrap">
+    <div class="rodape">
+      <div>
+        <img src="assets/logo-branco.svg" alt="Congelito">
+        <p>Dindin de açaí da nossa família pra sua.</p>
+      </div>
+      <div>
+        <p><a href="https://www.instagram.com/congelito.oficial/" target="_blank" rel="noopener">@congelito.oficial</a></p>
+        <p><a href="#" id="zap-rodape" target="_blank" rel="noopener">WhatsApp do Congelito</a></p>
+      </div>
+    </div>
+    <p class="legal">Congelito Food Ltda · CNPJ 56.878.797/0001-89 · Sobradinho, DF</p>
+  </div>
+</footer>
+
+<a class="zap-fixo" id="zap-fixo" href="#" target="_blank" rel="noopener" aria-label="Falar com o Congelito no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.6-4.1c-.4-.6-1-1.6-1-3s.8-2.1 1-2.4a1.1 1.1 0 0 1 .8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6a8.4 8.4 0 0 0 1.6 1.9 7.7 7.7 0 0 0 2.2 1.4c.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3a2.2 2.2 0 0 1-.1 1.2Z"/></svg>
+</a>
+
+<script>
+// WhatsApp comercial do Congelito (Erick, 12/10/2026).
+const WHATS = "5561999952727";
+const DINDINS_POR_CONVIDADO = 2;
+const FAIXAS = [{min:100,preco:"R$ 350"},{min:200,preco:"R$ 600"},{min:400,preco:"R$ 1.000"}];
+const params = new URLSearchParams(location.search);
+const ORIGEM_URL = params.get("origem") || params.get("utm_source") || "";
+
+function zapLink(texto){ return "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(texto); }
+const geral = zapLink("Oi, Congelito! Vim pelo site e quero saber mais." + (ORIGEM_URL ? " (origem: " + ORIGEM_URL + ")" : ""));
+document.getElementById("zap-fixo").href = geral;
+document.getElementById("zap-rodape").href = geral;
+
+// mosaico da marca
+const simbolos = ["c","o","n","g","e","l","i","t","o","❄","●"];
+const cores = ["c1","c2","c3","c4","c5"];
+const floco = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M12 2l-2.5 2.5M12 2l2.5 2.5M12 22l-2.5-2.5M12 22l2.5-2.5"/></svg>';
+for (const id of ["mosaico","mosaico2"]) {
+  const el = document.getElementById(id); let html = "";
+  for (let i = 0; i < 40; i++) {
+    const s = simbolos[(i * 7) % simbolos.length], c = cores[(i * 3 + (id === "mosaico2" ? 1 : 0)) % cores.length];
+    html += '<span class="' + c + '">' + (s === "❄" ? floco : s === "●" ? "&bull;" : s) + "</span>";
+  }
+  el.innerHTML = html;
+}
+
+// calculadora da festa
+const f = document.getElementById("calc"), res = document.getElementById("resultado"), btn = document.getElementById("btn-zap");
+const faixasEl = [...document.querySelectorAll(".faixa")];
+const origemSel = document.getElementById("origem");
+if (/qr|freezer|fonte/i.test(ORIGEM_URL)) origemSel.value = "QR code no freezer da Fonte de Vida";
+
+function atualiza(){
+  const n = parseInt(f.convidados.value, 10);
+  faixasEl.forEach(el => el.classList.remove("ativa"));
+  let msg = "Oi, Congelito! Quero o freezer na minha festa.";
+  if (n > 0) {
+    const dindins = n * DINDINS_POR_CONVIDADO;
+    const faixa = FAIXAS.find(x => dindins <= x.min);
+    if (faixa) {
+      faixasEl.find(el => +el.dataset.min === faixa.min).classList.add("ativa");
+      res.innerHTML = '<span class="n">' + dindins + ' dindins</span><p>Sugestão: opção de <strong>até ' + faixa.min + '</strong>, por <strong>' + faixa.preco + '</strong>, com freezer incluso. Conta de ' + DINDINS_POR_CONVIDADO + ' por convidado.</p>';
+      msg += "\n• Convidados: " + n + "\n• Sugestão do site: até " + faixa.min + " dindins (" + faixa.preco + ")";
+    } else {
+      res.innerHTML = '<span class="n">' + dindins + ' dindins</span><p>É festa grande! Passa das 400 unidades da maior opção. Chama no WhatsApp que a gente monta um orçamento sob medida.</p>';
+      msg += "\n• Convidados: " + n + " (" + dindins + " dindins, acima de 400)";
+    }
+  } else {
+    res.innerHTML = "<p>Informe os convidados para ver a sugestão.</p>";
+  }
+  if (f.data.value) { const [a,m,d] = f.data.value.split("-"); msg += "\n• Data: " + d + "/" + m + "/" + a; }
+  if (f.local.value.trim()) msg += "\n• Local: " + f.local.value.trim();
+  msg += "\n• Equipamento: " + f.equip.value;
+  if (f.origem.value) msg += "\n• Conheci por: " + f.origem.value;
+  if (ORIGEM_URL) msg += "\n(origem: " + ORIGEM_URL + ")";
+  btn.href = zapLink(msg);
+}
+f.addEventListener("input", atualiza);
+f.addEventListener("submit", e => e.preventDefault());
+atualiza();
+</script>
+</body>
+</html>
