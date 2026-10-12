@@ -97,7 +97,13 @@ h2{font-size:clamp(2.6rem,6vw,4.2rem);color:var(--acai)}
 .faixa small{opacity:.85}
 .faixa.ativa{border-color:var(--limao);background:rgba(169,217,32,.16)}
 .nota{font-size:.9rem;opacity:.85;margin-top:14px}
-.festa figure img{border-radius:var(--raio);aspect-ratio:4/5;object-fit:cover;width:100%;margin-top:26px}
+.equip{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.equip figure{background:rgba(255,255,255,.08);border-radius:22px;overflow:hidden}
+.equip img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.equip figcaption{padding:12px 14px 16px;font-size:.9rem}
+.equip figcaption strong{display:block;font-size:1.05rem;color:var(--limao)}
+@media (max-width:520px){.equip{grid-template-columns:1fr}}
+
 
 .calc{background:var(--branco);color:var(--tinta);border-radius:var(--raio);padding:clamp(20px,5vw,30px);box-shadow:10px 10px 0 var(--rosa)}
 .calc h3{font-size:1.4rem;color:var(--acai);margin-bottom:6px}
@@ -240,8 +246,11 @@ footer{background:var(--rosa);color:var(--branco);padding:56px 0 40px}
           <div class="faixa" data-min="200"><span class="preco">R$ 600</span><strong>até 200 dindins</strong><small>festas de escola e de salão</small></div>
           <div class="faixa" data-min="400"><span class="preco">R$ 1.000</span><strong>até 400 dindins</strong><small>eventos grandes e confraternizações</small></div>
         </div>
-        <p class="nota">Freezer incluso em todas as opções. O valor pode mudar conforme a distância do local.</p>
-        <figure><img src="assets/gelito-festa.webp" alt="O Gelito num parque de Brasília com um freezer Congelito" loading="lazy" width="768" height="1344"></figure>
+        <p class="nota">Freezer azul incluso em todas as opções. Quer o Congelity? Consulte a disponibilidade. O valor pode mudar conforme a distância do local.</p>
+        <div class="equip">
+          <figure><img src="assets/freezer-azul.webp" alt="Freezer azul do Congelito numa loja" loading="lazy" width="700" height="804"><figcaption><strong>Freezer azul</strong>O clássico, com a arte do Congelito. Vai cheio e volta depois da festa.</figcaption></figure>
+          <figure><img src="assets/congelity.webp" alt="Congelity, o carrinho de dindin de açaí do Congelito" loading="lazy" width="720" height="563"><figcaption><strong>Congelity</strong>Nosso carrinho de dindin de açaí, inspirado no Curiosity, o robô explorador de Marte.</figcaption></figure>
+        </div>
       </div>
 
       <form class="calc" id="calc" novalidate>
@@ -253,6 +262,12 @@ footer{background:var(--rosa);color:var(--branco);padding:56px 0 40px}
           <div><label for="data">Data da festa</label><input id="data" name="data" type="date"></div>
           <div><label for="local">Bairro ou cidade</label><input id="local" name="local" type="text" placeholder="Ex.: Sobradinho"></div>
         </div>
+        <label for="equip">Equipamento</label>
+        <select id="equip" name="equip">
+          <option>Freezer azul</option>
+          <option>Congelity, o carrinho</option>
+          <option>Ainda não sei</option>
+        </select>
         <label for="origem">Como você conheceu o Congelito?</label>
         <select id="origem" name="origem">
           <option value="">Escolha uma opção</option>
@@ -309,8 +324,8 @@ footer{background:var(--rosa);color:var(--branco);padding:56px 0 40px}
 </a>
 
 <script>
-// ⚠️ Confirmar o número do WhatsApp comercial (DDI + DDD + número, só dígitos).
-const WHATS = "5561998563645";
+// WhatsApp comercial do Congelito (Erick, 12/10/2026).
+const WHATS = "5561999952727";
 const DINDINS_POR_CONVIDADO = 2;
 const FAIXAS = [{min:100,preco:"R$ 350"},{min:200,preco:"R$ 600"},{min:400,preco:"R$ 1.000"}];
 const params = new URLSearchParams(location.search);
@@ -360,6 +375,7 @@ function atualiza(){
   }
   if (f.data.value) { const [a,m,d] = f.data.value.split("-"); msg += "\n• Data: " + d + "/" + m + "/" + a; }
   if (f.local.value.trim()) msg += "\n• Local: " + f.local.value.trim();
+  msg += "\n• Equipamento: " + f.equip.value;
   if (f.origem.value) msg += "\n• Conheci por: " + f.origem.value;
   if (ORIGEM_URL) msg += "\n(origem: " + ORIGEM_URL + ")";
   btn.href = zapLink(msg);
