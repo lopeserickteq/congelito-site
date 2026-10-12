@@ -32,6 +32,7 @@ a{color:inherit}
 .btn:active{transform:scale(.97)}
 .btn-rosa{background:var(--rosa);color:var(--branco);box-shadow:0 6px 0 #a50f6c}
 .btn-claro{background:var(--branco);color:var(--acai);box-shadow:0 6px 0 rgba(43,22,80,.25)}
+.btn-acai{background:var(--acai);color:var(--branco);box-shadow:0 6px 0 #2e1757}
 .btn-zap{background:#1fae5b;color:#fff;box-shadow:0 6px 0 #127a3e}
 .btn svg{width:1.2em;height:1.2em}
 
@@ -125,6 +126,7 @@ h2{font-size:clamp(2.6rem,6vw,4.2rem);color:var(--acai)}
 .selos span:nth-child(2){background:var(--rosa);color:#fff}
 .selos span:nth-child(3){background:var(--turquesa);color:#fff}
 .porque img{border-radius:var(--raio);border:3px solid var(--acai)}
+.foto-insta{display:grid;gap:22px;justify-items:start}
 @media (max-width:820px){.porque-grid{grid-template-columns:1fr}}
 
 footer{background:var(--rosa);color:var(--branco);padding:56px 0 40px}
@@ -293,11 +295,13 @@ footer{background:var(--rosa);color:var(--branco);padding:56px 0 40px}
   <div class="wrap porque-grid">
     <div>
       <h2 id="t-sobre" class="display">Feito em família</h2>
-      <p class="sub">O Congelito é feito pela nossa família. E fazemos pensando na sua: dindin de açaí do bem, sem lactose, sem aromatizante e sem corante, pra criançada e pra quem nunca deixou de ser criança.</p>
+      <p class="sub">O Congelito é feito pela nossa família. E fazemos pensando na sua: açaí do bem pra criançada e pros marmanjos.</p>
       <div class="selos"><span>sem lactose</span><span>sem corante</span><span>sem aromatizante</span></div>
-      <a class="btn btn-rosa" href="https://www.instagram.com/congelito.oficial/" target="_blank" rel="noopener">Seguir no Instagram</a>
     </div>
-    <img src="assets/congelito-acai.webp" alt="Pacote de Congelito mergulhando numa tigela de açaí" loading="lazy" width="1100" height="803">
+    <div class="foto-insta">
+      <img src="assets/congelito-acai.webp" alt="Pacote de Congelito mergulhando numa tigela de açaí" loading="lazy" width="1100" height="803">
+      <a class="btn btn-acai" href="https://www.instagram.com/congelito.oficial/" target="_blank" rel="noopener">Seguir no Instagram</a>
+    </div>
   </div>
 </section>
 </main>
