@@ -144,7 +144,26 @@ footer{background:var(--rosa);color:var(--branco);padding:56px 0 40px}
 .zap-fixo{position:fixed;right:16px;bottom:16px;z-index:9;width:60px;height:60px;border-radius:50%;background:#1fae5b;
   display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .zap-fixo svg{width:32px;height:32px;fill:#fff}
+
+.mapa-bloco{margin-top:28px;display:grid;gap:14px}
+.mapa-acoes{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.busca{display:flex;gap:8px;flex-wrap:wrap}.busca[hidden]{display:none}
+.busca input{font:inherit;padding:12px 16px;border-radius:999px;border:2px solid var(--acai);min-width:200px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.perto p{margin:0}.perto ol{margin:6px 0 0;padding-left:20px}.perto li{margin:4px 0}
+.perto button{font:inherit;font-weight:700;color:var(--rosa);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline}
+.mapa{height:440px;border-radius:var(--raio);overflow:hidden;border:3px solid var(--acai);box-shadow:8px 8px 0 var(--acai)}
+.pino{background:none;border:0;padding:0;width:34px;height:44px;cursor:pointer}.pino svg{width:100%;height:100%;display:block}
+.voce{width:18px;height:18px;border-radius:50%;background:#2563eb;border:3px solid #fff;box-shadow:0 0 0 6px rgba(37,99,235,.25)}
+.pop{font-family:inherit;color:var(--tinta);display:grid;gap:4px}.pop strong{font-size:1rem;color:var(--acai)}.pop p{margin:0;font-size:.88rem}
+.pop-grupo{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--rosa);font-weight:700}
+.pop-hora{opacity:.85}.pop-km{font-weight:700}
+.pop-selos{display:flex;gap:6px;margin:2px 0}.selo-venda{font-size:.75rem;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--gelo);border:1.5px solid var(--turquesa)}
+.selo-venda.delivery{border-color:var(--rosa)}
+.pop-links{display:flex;gap:14px;margin-top:4px}.pop-links a{font-weight:700;color:var(--rosa);font-size:.88rem}
+@media (max-width:760px){.mapa{height:380px}}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
 </head>
 <body>
 
@@ -152,8 +171,8 @@ footer{background:var(--rosa);color:var(--branco);padding:56px 0 40px}
   <div class="wrap topo">
     <a href="#" aria-label="Congelito, início"><img src="assets/logo-branco.svg" alt="Congelito"></a>
     <nav aria-label="Seções">
-      <a href="#onde">Onde comprar</a>
       <a href="#festa">Pra sua festa</a>
+      <a href="#onde">Onde comprar</a>
       <a href="#sobre">Sobre</a>
     </nav>
   </div>
@@ -163,12 +182,11 @@ footer{background:var(--rosa);color:var(--branco);padding:56px 0 40px}
 <section class="hero" aria-labelledby="t-hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="selo">Semana das Crianças</span>
-      <h1 id="t-hero" class="display"><span>Dindin</span> <span>de açaí</span> <span>geladinho</span> <span>e do bem</span></h1>
-      <p class="lead">Açaí com banana, sem lactose, sem corante e sem aromatizante. Agora nas lojas Fonte de Vida do DF e Entorno.</p>
+      <h1 id="t-hero" class="display"><span>O freezer</span> <span>de açaí</span> <span>da sua</span> <span>festa</span></h1>
+      <p class="lead">Congelito, açaí do bem: sem lactose, sem corante e sem aromatizante. A gente leva o freezer cheio, você só serve.</p>
       <div class="acoes">
+        <a class="btn btn-rosa" href="#festa">Levar o freezer pra minha festa</a>
         <a class="btn btn-claro" href="#onde">Onde comprar</a>
-        <a class="btn btn-rosa" href="#festa">Levar pra minha festa</a>
       </div>
     </div>
     <figure class="foto-hero"><img src="assets/gelito-festa.webp" alt="O Gelito, mascote azul do Congelito, num parque de Brasília com um isopor do Congelito" width="768" height="1344"></figure>
@@ -177,10 +195,73 @@ footer{background:var(--rosa);color:var(--branco);padding:56px 0 40px}
 
 <div class="mosaico" aria-hidden="true" id="mosaico"></div>
 
+
+<section id="festa" class="festa" aria-labelledby="t-festa">
+  <div class="wrap">
+    <h2 id="t-festa" class="display">O freezer vai junto pra sua festa</h2>
+    <p class="sub">Aniversário, festa da escola, confraternização. A gente leva o freezer cheio, você só serve.</p>
+    <div class="festa-grid">
+      <div>
+        <div class="faixas" id="faixas">
+          <div class="faixa" data-min="100"><span class="preco">R$ 350</span><strong>até 100 dindins</strong><small>festas pequenas e aniversários em casa</small></div>
+          <div class="faixa" data-min="200"><span class="preco">R$ 600</span><strong>até 200 dindins</strong><small>festas de escola e de salão</small></div>
+          <div class="faixa" data-min="400"><span class="preco">R$ 1.000</span><strong>até 400 dindins</strong><small>eventos grandes e confraternizações</small></div>
+        </div>
+        <p class="nota">Freezer azul ou Congelity inclusos, pelos mesmos valores. O valor pode mudar conforme a distância do local.</p>
+        <div class="equip">
+          <figure><img src="assets/freezer-azul.webp" alt="Freezer azul do Congelito numa loja" loading="lazy" width="700" height="804"><figcaption><strong>Freezer azul</strong>O clássico, com a arte do Congelito. Vai cheio e volta depois da festa.</figcaption></figure>
+          <figure><img src="assets/congelity.webp" alt="Congelity, o carrinho de dindin de açaí do Congelito" loading="lazy" width="720" height="563"><figcaption><strong>Congelity</strong>Nosso carrinho de dindin de açaí, inspirado no Curiosity, o robô explorador de Marte.</figcaption></figure>
+        </div>
+      </div>
+
+      <form class="calc" id="calc" novalidate>
+        <h3>Quantos dindins a sua festa precisa?</h3>
+        <p>Conte os convidados que a gente sugere a opção e já abre o WhatsApp com tudo preenchido.</p>
+        <label for="convidados">Número de convidados</label>
+        <input id="convidados" name="convidados" type="number" inputmode="numeric" min="1" max="2000" placeholder="Ex.: 50">
+        <div class="duas">
+          <div><label for="data">Data da festa</label><input id="data" name="data" type="date"></div>
+          <div><label for="local">Bairro ou cidade</label><input id="local" name="local" type="text" placeholder="Ex.: Sobradinho"></div>
+        </div>
+        <label for="equip">Equipamento</label>
+        <select id="equip" name="equip">
+          <option selected>Ainda não sei</option>
+          <option>Freezer azul</option>
+          <option>Congelity, o carrinho</option>
+        </select>
+        <label for="origem">Como você conheceu o Congelito?</label>
+        <select id="origem" name="origem">
+          <option value="">Escolha uma opção</option>
+          <option>QR code no freezer da Fonte de Vida</option>
+          <option>Instagram</option>
+          <option>Indicação de alguém</option>
+          <option>Experimentei numa festa</option>
+          <option>Outro</option>
+        </select>
+        <div class="resultado" aria-live="polite" id="resultado">
+          <p>Informe os convidados para ver a sugestão.</p>
+        </div>
+        <a class="btn btn-zap" id="btn-zap" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.6-4.1c-.4-.6-1-1.6-1-3s.8-2.1 1-2.4a1.1 1.1 0 0 1 .8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6a8.4 8.4 0 0 0 1.6 1.9 7.7 7.7 0 0 0 2.2 1.4c.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3a2.2 2.2 0 0 1-.1 1.2Z"/></svg>
+          Pedir orçamento no WhatsApp
+        </a>
+      </form>
+    </div>
+  </div>
+</section>
+
 <section id="onde" aria-labelledby="t-onde">
   <div class="wrap">
     <h2 id="t-onde" class="display">Onde tem Congelito</h2>
-    <p class="sub">Procure o freezer azul da Congelito nas lojas Fonte de Vida. Se não der pra ir até lá, a Fonte de Vida entrega, e acima de R$ 80 a entrega é grátis.</p>    <div class="onde-grid">
+    <p class="sub">Procure o freezer azul da Congelito nas lojas Fonte de Vida. Se não der pra ir até lá, a Fonte de Vida entrega, e acima de R$ 80 a entrega é grátis.</p>
+    <div class="mapa-bloco">
+      <div class="mapa-acoes">
+        <button type="button" class="btn btn-rosa" id="btn-perto">Achar o ponto mais perto de mim</button>
+        <form id="busca-bairro" class="busca" hidden><label class="sr" for="bairro">Bairro ou cidade</label><input id="bairro" type="text" placeholder="Ex.: Sobradinho" autocomplete="address-level2"><button class="btn btn-claro" type="submit">Buscar</button></form>
+      </div>
+      <div id="perto" class="perto" aria-live="polite"><p>Toque no botão e a gente mostra o ponto mais perto. Sua localização fica só no seu celular.</p></div>
+      <div id="mapa" class="mapa" role="region" aria-label="Mapa com os pontos de venda do Congelito"></div>
+    </div>    <div class="onde-grid">
       <div class="cartao">
         <h3>Lojas Fonte de Vida com o freezer do Congelito</h3>
         <ul class="lojas">
@@ -243,60 +324,6 @@ footer{background:var(--rosa);color:var(--branco);padding:56px 0 40px}
             <a href="https://fontedevidaonline.com.br/valparaiso-go/" target="_blank" rel="noopener">Valparaíso</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="festa" class="festa" aria-labelledby="t-festa">
-  <div class="wrap">
-    <h2 id="t-festa" class="display">O freezer vai junto pra sua festa</h2>
-    <p class="sub">Aniversário, festa da escola, confraternização. A gente leva o freezer cheio, você só serve.</p>
-    <div class="festa-grid">
-      <div>
-        <div class="faixas" id="faixas">
-          <div class="faixa" data-min="100"><span class="preco">R$ 350</span><strong>até 100 dindins</strong><small>festas pequenas e aniversários em casa</small></div>
-          <div class="faixa" data-min="200"><span class="preco">R$ 600</span><strong>até 200 dindins</strong><small>festas de escola e de salão</small></div>
-          <div class="faixa" data-min="400"><span class="preco">R$ 1.000</span><strong>até 400 dindins</strong><small>eventos grandes e confraternizações</small></div>
-        </div>
-        <p class="nota">Freezer azul ou Congelity inclusos, pelos mesmos valores. O valor pode mudar conforme a distância do local.</p>
-        <div class="equip">
-          <figure><img src="assets/freezer-azul.webp" alt="Freezer azul do Congelito numa loja" loading="lazy" width="700" height="804"><figcaption><strong>Freezer azul</strong>O clássico, com a arte do Congelito. Vai cheio e volta depois da festa.</figcaption></figure>
-          <figure><img src="assets/congelity.webp" alt="Congelity, o carrinho de dindin de açaí do Congelito" loading="lazy" width="720" height="563"><figcaption><strong>Congelity</strong>Nosso carrinho de dindin de açaí, inspirado no Curiosity, o robô explorador de Marte.</figcaption></figure>
-        </div>
-      </div>
-
-      <form class="calc" id="calc" novalidate>
-        <h3>Quantos dindins a sua festa precisa?</h3>
-        <p>Conte os convidados que a gente sugere a opção e já abre o WhatsApp com tudo preenchido.</p>
-        <label for="convidados">Número de convidados</label>
-        <input id="convidados" name="convidados" type="number" inputmode="numeric" min="1" max="2000" placeholder="Ex.: 50">
-        <div class="duas">
-          <div><label for="data">Data da festa</label><input id="data" name="data" type="date"></div>
-          <div><label for="local">Bairro ou cidade</label><input id="local" name="local" type="text" placeholder="Ex.: Sobradinho"></div>
-        </div>
-        <label for="equip">Equipamento</label>
-        <select id="equip" name="equip">
-          <option selected>Ainda não sei</option>
-          <option>Freezer azul</option>
-          <option>Congelity, o carrinho</option>
-        </select>
-        <label for="origem">Como você conheceu o Congelito?</label>
-        <select id="origem" name="origem">
-          <option value="">Escolha uma opção</option>
-          <option>QR code no freezer da Fonte de Vida</option>
-          <option>Instagram</option>
-          <option>Indicação de alguém</option>
-          <option>Experimentei numa festa</option>
-          <option>Outro</option>
-        </select>
-        <div class="resultado" aria-live="polite" id="resultado">
-          <p>Informe os convidados para ver a sugestão.</p>
-        </div>
-        <a class="btn btn-zap" id="btn-zap" href="#" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.6-4.1c-.4-.6-1-1.6-1-3s.8-2.1 1-2.4a1.1 1.1 0 0 1 .8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6a8.4 8.4 0 0 0 1.6 1.9 7.7 7.7 0 0 0 2.2 1.4c.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3a2.2 2.2 0 0 1-.1 1.2Z"/></svg>
-          Pedir orçamento no WhatsApp
-        </a>
-      </form>
     </div>
   </div>
 </section>
@@ -406,5 +433,8 @@ f.addEventListener("input", atualiza);
 f.addEventListener("submit", e => e.preventDefault());
 atualiza();
 </script>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="assets/pontos.js"></script>
+<script src="assets/mapa.js"></script>
 </body>
 </html>
