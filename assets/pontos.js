@@ -318,5 +318,17 @@ window.PONTOS = [
   "venda": [
    "presencial"
   ]
+ },
+ {
+  "id": "quiosque-senado",
+  "nome": "Quiosque Senado Federal",
+  "grupo": "proprio",
+  "end": "Esplanada dos Ministérios, nas imediações do Senado Federal - Zona Cívico-Administrativa",
+  "lat": -15.796373,
+  "lng": -47.864967,
+  "horario": "",
+  "venda": [
+   "presencial"
+  ]
  }
 ];

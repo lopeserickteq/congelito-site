@@ -28,7 +28,7 @@
       '<span class="pop-grupo">' + (p.grupo === "fdv" ? "Loja Fonte de Vida" : "Ponto de venda") + "</span>" +
       "<strong>" + esc(p.nome) + "</strong>" +
       "<p>" + esc(p.end) + "</p>" +
-      '<p class="pop-hora">' + esc(p.horario) + "</p>" +
+      (p.horario ? '<p class="pop-hora">' + esc(p.horario) + "</p>" : "") +
       '<div class="pop-selos">' + selos + "</div>" +
       (km != null ? '<p class="pop-km">a ' + km.toFixed(1).replace(".", ",") + " km de você</p>" : "") +
       '<div class="pop-links"><a href="' + rotas(p) + '" target="_blank" rel="noopener">Como chegar</a>' +
