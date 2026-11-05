@@ -326,7 +326,7 @@ window.PONTOS = [
   "end": "Esplanada dos Ministérios, nas imediações do Senado Federal - Zona Cívico-Administrativa",
   "lat": -15.796373,
   "lng": -47.864967,
-  "horario": "",
+  "horario": "seg–sex 08:00–18:00 · sáb e dom fechado",
   "venda": [
    "presencial"
   ]
